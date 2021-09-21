@@ -46,5 +46,5 @@ def weight_on_planet(weight_on_earth,planet):
         print(f'Your weight on jupiter is {weight_on_jupiter} kg')
     else:
         print('Sorry, I do not know this planet.')
-print(weight_on_planet())
+print(weight_on_planet(weight_on_earth,planet))
 """call function"""
