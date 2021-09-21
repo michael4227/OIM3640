@@ -26,6 +26,6 @@ print(f'the time arrived home is {time} : {tot_time+52-60}am')
 #print('the time arrived home is', 6+1, ':', (tot_time+52)-60, 'am')
 
 # 4
-var = '{:.2f}'.format((89-82)/82*100)
-print(f'{var}%')
+var = (89-82)/82*100
+print(f'{var:.2f}%')
 
