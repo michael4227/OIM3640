@@ -31,20 +31,41 @@ Notice:
 # 3. calculation
 # 4. print the weight on the corresponding planet
 
+
+# weight_on_earth = float(input('Please enter your weight on earth in kg:'))
+# planet = input('Please enter your planet:')
+# '''asking for the user's inputs'''
+# def weight_on_planet(weight_on_earth,planet):
+#     if planet is 'moon':
+#         weight_on_moon = weight_on_earth*0.165
+#         print(f'Your weight on moon is {weight_on_moon} kg')
+#     if planet is 'mars':
+#         weight_on_mars = weight_on_earth * 0.378
+#         print(f'Your weight on mars is {weight_on_mars} kg')
+#     if planet is 'jupiter':
+#         weight_on_jupiter = weight_on_earth * 2.528
+#         print(f'Your weight on jupiter is {weight_on_jupiter} kg')
+#     else:
+#         print('Sorry, I do not know this planet.')
+# print(weight_on_planet(weight_on_earth,planet))
+# """call function"""
+
+# V2
 weight_on_earth = float(input('Please enter your weight on earth in kg:'))
 planet = input('Please enter your planet:')
-'''asking for the user's inputs'''
+# docstring should be after the def, instead of in front of it
 def weight_on_planet(weight_on_earth,planet):
-    if planet is 'moon':
+    '''the outcome unit would be the same as your input unit'''
+    if planet == 'moon':
         weight_on_moon = weight_on_earth*0.165
         print(f'Your weight on moon is {weight_on_moon} kg')
-    if planet is 'mars':
+    if planet == 'mars':
         weight_on_mars = weight_on_earth * 0.378
         print(f'Your weight on mars is {weight_on_mars} kg')
-    if planet is 'jupiter':
+    if planet == 'jupiter':
         weight_on_jupiter = weight_on_earth * 2.528
         print(f'Your weight on jupiter is {weight_on_jupiter} kg')
     else:
         print('Sorry, I do not know this planet.')
+    return weight_on_earth, planet
 print(weight_on_planet(weight_on_earth,planet))
-"""call function"""
