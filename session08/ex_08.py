@@ -100,11 +100,3 @@ while iteration < 1000:
     i += 1 + iteration
     iteration += 2
 print(i)
-
-# EX3
-while True:
-    print(x)
-    y = (x + a/x) / 2
-    if y == x:
-        break
-    x = y
