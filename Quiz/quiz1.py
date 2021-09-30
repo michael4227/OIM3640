@@ -95,7 +95,7 @@ If it is difficult for you, try to print the following pattern first:
 
 def print_letters(n):
     """"""
-
+    for i in range(n+1):
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
