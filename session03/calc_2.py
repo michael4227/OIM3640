@@ -29,3 +29,10 @@ print(f'the time arrived home is {time} : {tot_time+52-60}am')
 var = (89-82)/82*100
 print(f'{var:.2f}%')
 
+# the lines above = 
+var = '{:.2f}'.format((89-82)/82*100)
+print(f'{var}%')
+# or 
+var = (89-82)/82*100
+print(f'{var:.2f}%')
+
