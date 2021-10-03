@@ -1,7 +1,5 @@
 # ex1
 import abc
-
-
 prefixes = 'JKLMNOPQ'
 suffix = 'ack'
 for letter in prefixes:
