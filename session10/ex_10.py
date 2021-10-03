@@ -1,4 +1,7 @@
 # ex1
+import abc
+
+
 prefixes = 'JKLMNOPQ'
 suffix = 'ack'
 for letter in prefixes:
@@ -54,5 +57,10 @@ def any_lowercase5(s):
 
 #ex5
 
-def rotate_word():
-    
+def rotate_word(s):
+    for a in s:
+        num = ord(a)+1
+        a = chr(num)
+    return s
+
+rotate_word(abc)
