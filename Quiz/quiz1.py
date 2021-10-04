@@ -54,9 +54,9 @@ def calculate_avg(n):
     """
     sum = 0
     for i in range(n+1):
-        sum == sum + i*i
-        return n, sum
-
+        sum = sum + i*i
+    return sum
+calculate_avg(3)
 
 
 # When you've completed your function, uncomment the
@@ -94,7 +94,10 @@ If it is difficult for you, try to print the following pattern first:
 
 
 def print_letters(n):
-    """"""
+    """printing a to n in n lines"""
+    for i in range(n+1):
+        print(f'{(chr(96+i) )*i}', end="\n")
+print_letters(5)
 #     for i in range(n+1):
 
 # When you've completed your function, uncomment the

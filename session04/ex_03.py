@@ -25,3 +25,5 @@ hournum = ctime//60//60%24
 minnum = ctime//60%60
 secondnum = ctime%60
 print(f'{int(daynum)} days, {int(hournum)} hours, {int(minnum)} mins, and {int(secondnum)} seconds')
+
+print(f'{daynum:d}')

@@ -68,5 +68,5 @@ def weight_on_planet(weight_on_earth,planet):
         return (f'Your weight on jupiter is {weight_on_jupiter} kg')
     else:
         return ('Sorry, I do not know this planet.')
-    return weight_on_earth, planet
 print(weight_on_planet(80,'mars'))
+# return 怎么用
