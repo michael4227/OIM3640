@@ -11,17 +11,15 @@ def is_2021(a, b):
     Given 2 integers, a and b, return True if one of them is 2021 or their sum is 2021 or their difference is 2021. Return False otherwise.
     """
     if a == 2021:
-        print('true')
+        return('true')
     elif b == 2021:
-        print('true')
+        return('true')
     elif a+b == 2021:
-            print('true')
+        return('true')
     elif abs(a-b) == 2021:
-        print('true')
+        return('true')
     else:
-        print('false')
-    return a, b
-
+        return('false')
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
@@ -55,8 +53,8 @@ def calculate_avg(n):
     sum = 0
     for i in range(n+1):
         sum = sum + i*i
+    sum  = sum/n
     return sum
-calculate_avg(3)
 
 
 # When you've completed your function, uncomment the
@@ -65,7 +63,7 @@ calculate_avg(3)
 
 # print(calculate_avg(1))
 # # expect: 1.0
-print(calculate_avg(5))
+# print(calculate_avg(5))
 # # expect: 11.0
 
 
@@ -96,15 +94,12 @@ If it is difficult for you, try to print the following pattern first:
 def print_letters(n):
     """printing a to n in n lines"""
     for i in range(n+1):
-        print(f'{(chr(96+i) )*i}', end="\n")
-print_letters(5)
+        print(f'{chr(96+i)} '*i)
 #     for i in range(n+1):
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
-
-
-# print_letters(5)
+print_letters(5)
 # # expect:
 # # a
 # # b b
