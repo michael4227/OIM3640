@@ -10,7 +10,7 @@ def quadratic(a,b,c):
 print(quadratic(1,2,1))
 
 
-# import math
+import math
 # def quadratic(a, b, c):
 #     """Simple version of quadratic equation solver
 #     a: float

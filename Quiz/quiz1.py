@@ -99,7 +99,7 @@ def print_letters(n):
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
-print_letters(5)
+print_letters(7)
 # # expect:
 # # a
 # # b b
@@ -118,3 +118,8 @@ print_letters(5)
 # # g g g g g g g
 # # h h h h h h h h
 # # i i i i i i i i i
+
+
+def func(n):
+    return (n)
+print(func('apple'))
