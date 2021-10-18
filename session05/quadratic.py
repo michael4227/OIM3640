@@ -4,10 +4,10 @@ def quadratic(a,b,c):
     b = float(b)
     c = float(c)
     sn = (b**2) - (4*a*c)
-    x1 = (-b+sn**(1/2)/2/a)
-    x2 = (-b-sn**(1/2)/2/a)
+    x1 = (-b+sn**(1/2))/2/a
+    x2 = (-b-sn**(1/2))/2/a
     return(x1,x2)
-print(quadratic(1,2,1))
+print(quadratic(1,2,2))
 
 
 import math
@@ -54,6 +54,8 @@ def quadratic(a, b, c):
     else:
         print('No real number solution.')
         return None
+
+quadratic(1, 4, 4)
 
 #接下来的码是什么意思啊
 def main():
