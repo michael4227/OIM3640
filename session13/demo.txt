@@ -1,0 +1,201 @@
+   1: >>> # string and list
+   2: >>> name = 'joon'
+   3: >>> name = 'joon sung jang'
+   4: >>> name.split()
+['joon', 'sung', 'jang']
+   5: >>> ' '.join(_)
+'joon sung jang'
+   6: >>> name = 'joon'
+   7: >>> lst = []
+   8:
+>>> for letter in name:
+...     lst.append(letter)
+...
+   9: >>> lst
+['j', 'o', 'o', 'n']
+  10: >>> lst = list(name)
+  11: >>> lst
+['j', 'o', 'o', 'n']
+  12: >>> ''.join(lst)
+'joon'
+  13: >>> # string and dictionary
+  14: >>> name
+'joon'
+  15: >>> # create a dict that counts letters in a string
+  16: >>> d = {}
+  17: >>> d = dict()
+  18: >>> d
+{}
+  19:
+>>> for letter in name:
+...     if letter not in d:
+...         d[letter] = 1
+...     else:
+...         d[letter] += 1
+...
+  20: >>> d
+{'j': 1, 'o': 2, 'n': 1}
+  21: >>> ''.join(d.keys())
+'jon'
+  22: >>> # string and tuple
+  23: >>> name
+'joon'
+  24: >>> name[0] = 'm'
+  25: >>> lst
+['j', 'o', 'o', 'n']
+  26: >>> lst[0] = 'm'
+  27: >>> lst
+['m', 'o', 'o', 'n']
+  28: >>> t_1 = (1, 2, 2)
+  29: >>> t_1[0]
+1
+  30: >>> t_1[0] = 100
+  31:
+>>> def f():
+...     return 1, 2
+...
+  32: >>> result = f()
+  33: >>> type(result)
+tuple
+  34: >>> tel = '123-456-7890'
+  35: >>> area, _, local = tel.split('-')
+  36: >>> area
+'123'
+  37: >>> local
+'7890'
+  38: >>> *_, local = tel.split('-')
+  39: >>> local
+'7890'
+  40: >>> tel = '123-456-7890-5435-7657568'
+  41: >>> *_, local = tel.split('-')
+  42: >>> local
+'7657568'
+  43: >>> area, *_, local = tel.split('-')
+  44: >>> area
+'123'
+  45: >>> area, *_ = tel.split('-')
+  46: >>> area
+'123'
+  47: >>> name
+'joon'
+  48: >>> tuple(name)
+('j', 'o', 'o', 'n')
+  49: >>> t = tuple(name)
+  50: >>> t
+('j', 'o', 'o', 'n')
+  51: >>> t.append('y')
+  52: >>> name =
+  53: >>> name
+'joon'
+  54: >>> id(name)
+2508747421040
+  55: >>> id('joon')
+2508747421040
+  56: >>> name = 'moon'
+  57: >>> id(name)
+2508714665776
+  58: >>> t
+('j', 'o', 'o', 'n')
+  59: >>> ''.join(t)
+'joon'
+  60: >>> # string and set
+  61: >>> name
+'moon'
+  62: >>> name = 'joon'
+  63: >>> set(name)
+{'j', 'n', 'o'}
+  64: >>> len(set(name))
+3
+  65: >>> s1 = {1, 2, 3}
+  66: >>> s2 = {2, 3, 4}
+  67: >>> s1.intersection(s2)
+{2, 3}
+  68: >>> s1.union(s2)
+{1, 2, 3, 4}
+  69: >>> s1.difference(s2)
+{1}
+  70: >>> s2.difference(s1)
+{4}
+  71: >>> name
+'joon'
+  72: >>> s = set(name)
+  73: >>> s
+{'j', 'n', 'o'}
+  74: >>> s[0]
+  75: >>> # dictionary and set
+  76: >>> d
+{'j': 1, 'o': 2, 'n': 1}
+  77: >>> d.keys()
+dict_keys(['j', 'o', 'n'])
+  78: >>> set(d.keys())
+{'j', 'n', 'o'}
+  79: >>> # list and dicionary
+  80: >>> lst
+['m', 'o', 'o', 'n']
+  81: >>> d = {}
+  82:
+>>> for letter in d:
+...     d[letter] = d.get(letter, 0) + 1
+...
+  83: >>> d
+{}
+  84:
+>>> for letter in name:
+...     d[letter] = d.get(letter, 0) + 1
+...
+  85: >>> d
+{'j': 1, 'o': 2, 'n': 1}
+  86: >>> lst
+['m', 'o', 'o', 'n']
+  87: >>> d = {}
+  88:
+>>> for letter in lst:
+...     d[letter] = d.get(letter, 0) + 1
+...
+  89: >>> d
+{'m': 1, 'o': 2, 'n': 1}
+  90: >>> # list an tuple
+  91: >>> lst
+['m', 'o', 'o', 'n']
+  92: >>> tuple(lst)
+('m', 'o', 'o', 'n')
+  93: >>> list(tuple(lst))
+['m', 'o', 'o', 'n']
+  94: >>> # list and set
+  95: >>> lst
+['m', 'o', 'o', 'n']
+  96: >>> set(lst)
+{'m', 'n', 'o'}
+  97: >>> # string, list and dictionary
+  98: >>> lst
+['m', 'o', 'o', 'n']
+  99: >>> d
+{'m': 1, 'o': 2, 'n': 1}
+ 100:
+>>> for k in d.keys():
+...     print(k)
+...
+ 101: >>> for v in d.values()
+ 102:
+>>> for v in d.values():
+...     print(v)
+...
+ 103: >>> d
+{'m': 1, 'o': 2, 'n': 1}
+ 104: >>> list(d.keys())
+['m', 'o', 'n']
+ 105: >>> list(d.values())
+[1, 2, 1]
+ 106: >>> list(d.items())
+[('m', 1), ('o', 2), ('n', 1)]
+ 107:
+>>> for item in d.items():
+...     print(item, type(item))
+...
+ 108:
+>>> for k, v in d.items():
+...     print(f'{k} appears {v} times')
+...
+ 109: >>> d = {'a b': 2, 'b c': 3}
+ 110: >>> d = {['a', 'b']: 2, ['b', 'c']: 3}
+ 111: >>> d = {('a', 'b'): 2, ('b', 'c'): 3}
