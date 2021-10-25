@@ -92,7 +92,7 @@ def random_word(hist):
     """
     wordsbank = []
     for items in hist:
-        wordsbank.append(str(hist.keys())*int(hist.values()), end=' ')
+        wordsbank.append(str(hist.keys(items))*int(hist.values(items)), end=' ')
     return wordsbank
 
 
