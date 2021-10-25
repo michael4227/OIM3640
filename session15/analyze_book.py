@@ -64,7 +64,7 @@ def most_common(hist, excluding_stopwords=False):
 
     returns: list of (frequency, word) pairs
     """
-
+    return sorted(hist.items(),key=lambda x: x[1], reverse=True)
 
 def print_most_common(hist, num=10):
     """Prints the most commons words in a histgram and their frequencies.
@@ -80,7 +80,9 @@ def subtract(d1, d2):
 
     d1, d2: dictionaries
     """
-    pass
+    subtraction = d1.keys() - d2.keys()
+    return subtraction
+
 
 
 def random_word(hist):
@@ -88,7 +90,10 @@ def random_word(hist):
 
     The probability of each word is proportional to its frequency.
     """
-    pass
+    wordsbank = []
+    for items in hist:
+        wordsbank.append(str(hist.keys())*int(hist.values()), end=' ')
+    return wordsbank
 
 
 def main():
@@ -97,21 +102,22 @@ def main():
     print('Total number of words:', total_words(hist))
     print('Number of different words:', different_words(hist))
 
-    # t = most_common(hist, excluding_stopwords=True)
-    # print('The most common words are:')
-    # for freq, word in t[0:20]:
-    #     print(word, '\t', freq)
+    t = most_common(hist, excluding_stopwords=True)
+    print('The most common words are:')
+    for word,freq in t[0:20]:
+        print(word, '\t', freq)
 
-    # words = process_file('words.txt', skip_header=False)
+    words = process_file('data/words.txt', skip_header=False)
 
-    # diff = subtract(hist, words)
-    # print("The words in the book that aren't in the word list are:")
-    # for word in diff.keys():
-    #     print(word, end=' ')
+    diff = subtract(hist, words)
+    print("The words in the book that aren't in the word list are:")
+    for word in diff:
+        print(word, end=' ')
+# TODO professor, why the result of this code is different everytime I run it?
 
-    # print("\n\nHere are some random words from the book")
-    # for i in range(100):
-    #     print(random_word(hist), end=' ')
+    print("\n\nHere are some random words from the book")
+    for i in range(100):
+        print(random_word(hist), end=' ')
 
 
 if __name__ == '__main__':
