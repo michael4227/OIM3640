@@ -93,6 +93,7 @@ def random_word(hist):
     wordsbank = []
     for items in hist:
         wordsbank.append(str(hist.keys(items))*int(hist.values(items)), end=' ')
+# TODO the line above is not working, saying 'dict.keys() takes no arguments (1 given)'; if delete the word 'item,' the error message suggests 'int(hist.values())' has error.
     return wordsbank
 
 
