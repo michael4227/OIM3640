@@ -15,4 +15,4 @@ response_data = json.loads(response_text)
 print(response_data)
 
 # How do we get current temperature?
-response_data['main']
+response_data['main']['temp']
