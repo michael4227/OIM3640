@@ -132,7 +132,7 @@ def read_cities_to_list():
     # Make sure covid-19-vaccine.json is under "data" folder
     with open('data/covid-19-vaccine.json') as f:
         data = json.load(f)  # load json file into a dictionary named data
-        # pprint.pprint(data)
+        pprint.pprint(data)
     # You can write code below
     loc1 = data['responsePayloadData']['data']['MA']
     clist = []
