@@ -198,3 +198,10 @@ def reprint():
         cities[i] = sorted(cities[i],key=len,reverse=True)
     return cities
 print(reprint())
+
+# cities = first_letters(city_names)
+# for i in cities:
+#     print(i)
+# cities = first_letters(city_names)
+# for i in cities:
+#     print(cities[i])
