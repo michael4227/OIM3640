@@ -47,15 +47,20 @@ def reverse_DNA(data):
     """
     Given a DNA sequence (a string), return the complement DNA sequence
     """
-    data = data.replace('A','a')
-    data = data.replace('C','c')
-    data = data.replace('T','t')
-    data = data.replace('G','g')
-    data = data.replace('a','T')
-    data = data.replace('t','A')
-    data = data.replace('c','G')
-    data = data.replace('g','C')
-    return data
+    # data = data.replace('A','a')
+    # data = data.replace('C','c')
+    # data = data.replace('T','t')
+    # data = data.replace('G','g')
+    # data = data.replace('a','T')
+    # data = data.replace('t','A')
+    # data = data.replace('c','G')
+    # data = data.replace('g','C')
+    # return data
+    new_dna = ''
+    d = {'A':'T', 'T': 'A', 'G':'C','C':'G'}
+    for i in data:
+        new_dna += d[i]
+    return new_dna
 
 
 # # Uncomment the following lines to test
