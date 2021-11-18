@@ -58,11 +58,20 @@ def square_root(n):
         )
 square_root(10)
 
+a = "abc"
+print(f'{100000.12342:1f}bc')
+print(f'{100.1209301:2f}bc')
+
+pi = 3.1415926
+
+print(f'Pi equals {pi:.5f}.')
+print(f'Pi equals {pi:8.5f}.')
+print(f'Pi equals {pi:<30.20f}.')
+
 def main():
     # for i in range(1, 10):
     #     print('The square root of', i, 'is', mysqrt(i))
     square_root(11)
-
 
 if __name__ == '__main__':
     main()
