@@ -3,18 +3,48 @@ class Time:
 
     attributes: hour, minute, second
     """
+# time = Time()  # create an instance of Time type
+# time.hour = 3
+# time.minute = 12
+# time.second = 30
 
+# print(time.hour, time.minute, time.second)
+
+# later = Time()
+# later.hour = time.hour
+# later.minute = time.minute + 5
+# later.second = time.second
+
+# print(later.hour, later.minute, later.second)
 
 #######################
 # Exercise 1
 #######################
 
 
-def print_time(t):
-    """Prints a string representation of the time.
+    def print_time(self):
+        """Prints a string representation of the time.
 
-    t: Time object
-    """
+        t: Time object
+        """
+        print(f'{self.hour:02}:{self.minute:02}:{self.second:02}')
+
+    def time_to_int(time):
+        """Computes the number of seconds since midnight.
+
+        time: Time object.
+        """
+        minutes = time.hour * 60 + time.minute
+        seconds = minutes * 60 + time.second
+        return seconds
+
+start = Time()
+start.hour = 18
+start.minute = 34
+start.second = 0
+# Time.print_time(start)
+start.print_time()
+print(start.time_to_int)
 
 
 def is_after(t1, t2):
