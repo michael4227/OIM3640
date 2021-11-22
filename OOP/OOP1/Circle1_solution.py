@@ -1,4 +1,4 @@
-from OOP1.Point1_solution import *
+from Point1_solution import *
 import copy
 
 
@@ -26,6 +26,7 @@ def rect_in_circle(rect, circle):
     rect: Rectangle object
     circle: Circle object
     """
+# 
     p = copy.copy(rect.corner)
     # print_point(p)
     if not point_in_circle(p, circle):

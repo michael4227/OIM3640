@@ -8,13 +8,13 @@ class Point:
     """
 
 
-# my_point = Point()
-# # print(my_point)
-# # print(type(my_point))
-# # print(my_point.__doc__)
-# my_point.x = 3.0
-# my_point.y = 4.0
-# # print(my_point.x, my_point.y)
+my_point = Point()
+# print(my_point)
+# print(type(my_point))
+# print(my_point.__doc__)
+my_point.x = 3.0
+my_point.y = 4.0
+# print(my_point.x, my_point.y)
 
 
 def print_point(p):
@@ -43,15 +43,15 @@ def distance_between_points(p1, p2):
     return d
 
 
-# another_point = Point()
-# # another_point.x = 6
-# # another_point.y = 8
+another_point = Point()
+# another_point.x = 6
+# another_point.y = 8
 
-# another_point.x, another_point.y = 6, 8
-# print()
-# print_point(my_point)
-# print_point(another_point)
-# print(distance_between_points(my_point, another_point))
+another_point.x, another_point.y = 6, 8
+print()
+print_point(my_point)
+print_point(another_point)
+print(distance_between_points(my_point, another_point))
 
 
 class Rectangle:
@@ -61,14 +61,14 @@ class Rectangle:
     """
 
 
-# box = Rectangle()
-# box.width = 100.0
-# box.height = 200.0
-# box.corner = Point()
-# box.corner.x = 0
-# box.corner.y = 0
+box = Rectangle()
+box.width = 100.0
+box.height = 200.0
+box.corner = Point()
+box.corner.x = 0
+box.corner.y = 0
 
-# print(distance_between_points(my_point, box.corner))
+print(distance_between_points(my_point, box.corner))
 
 
 def find_center(rect):
