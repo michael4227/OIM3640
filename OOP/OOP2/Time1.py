@@ -3,31 +3,19 @@ class Time:
 
     attributes: hour, minute, second
     """
-# time = Time()  # create an instance of Time type
-# time.hour = 3
-# time.minute = 12
-# time.second = 30
-
-# print(time.hour, time.minute, time.second)
-
-# later = Time()
-# later.hour = time.hour
-# later.minute = time.minute + 5
-# later.second = time.second
-
-# print(later.hour, later.minute, later.second)
-
-#######################
-# Exercise 1
-#######################
-
-
-    def print_time(self):
+    def print_time(self): # for testing purpose on line 49
         """Prints a string representation of the time.
 
         t: Time object
         """
         print(f'{self.hour:02}:{self.minute:02}:{self.second:02}')
+
+def print_time(self):
+    """Prints a string representation of the time.
+
+    t: Time object
+    """
+    print(f'{self.hour:02}:{self.minute:02}:{self.second:02}')
 
     def time_to_int(time):
         """Computes the number of seconds since midnight.
@@ -37,19 +25,37 @@ class Time:
         minutes = time.hour * 60 + time.minute
         seconds = minutes * 60 + time.second
         return seconds
+time = Time()  # create an instance of Time type
+time.hour = 3
+time.minute = 12
+time.second = 30
 
+# print(time.hour, time.minute, time.second)
+
+later = Time()
+later.hour = time.hour
+later.minute = time.minute + 5
+later.second = time.second
+
+# print(later.hour, later.minute, later.second)
+
+#######################
+# Exercise 1
+#######################
 start = Time()
 start.hour = 18
 start.minute = 34
 start.second = 0
-# Time.print_time(start)
+Time.print_time(start)
 start.print_time()
-print(start.time_to_int)
+# print(start.time_to_int)
 
 
 def is_after(t1, t2):
     """Returns True if t1 is after t2; false otherwise."""
-
+    return (
+        t1.hour>t2.hour or (t1.hour==t2.hourt1 and t1.minute>t2.minute) or (t1.hour==t2.hourt1 and t1.minute==t2.minute and t1.second >t2.second)
+    )
 
 #######################
 # Prototyping
@@ -77,6 +83,17 @@ def add_time2(t1, t2):
     returns: Time
     TODO: improve the above function so the minute and second are smaller than 60
     """
+    sum = Time()
+    sum.hour = t1.hour + t2.hour
+    sum.minute = t1.minute + t2.minute
+    sum.second = t1.second + t2.second
+    if sum.second > 60:
+        sum.minute +=1
+        sum.second -= 60
+    if sum.minute > 60:
+        sum.hour +=1
+        sum.minute -= 60
+    return sum
 
 
 # Uncomment below for testing
@@ -94,21 +111,21 @@ def add_time2(t1, t2):
 # print_time(done)
 
 
-def increment(time, seconds):
-    """
-    Adds seconds to a Time object.
+# def increment(time, seconds):
+#     """
+#     Adds seconds to a Time object.
 
-    This is a modifier, not a pure function.
-    """
-    time.second += seconds
+#     This is a modifier, not a pure function.
+#     """
+#     time.second += seconds
 
-    if time.second >= 60:
-        time.second -= 60
-        time.minute += 1
+#     if time.second >= 60:
+#         time.second -= 60
+#         time.minute += 1
 
-    if time.minute >= 60:
-        time.minute -= 60
-        time.hour += 1
+#     if time.minute >= 60:
+#         time.minute -= 60
+#         time.hour += 1
 
 
 #######################
@@ -122,6 +139,16 @@ def increment_2(time, seconds):
 
     This is a pure function.
     """
+    result = Time()
+    result.hour, result.minute, result.second = time.hour, time.minute, time.second
+    result.second += seconds
+    while result.second >= 60:
+        result.minute += 1
+        result.second -= 60
+    while result.minute >= 60:
+        result.hour += 1
+        result.minute -= 60
+    return result
 
 
 #######################
@@ -145,7 +172,7 @@ def int_to_time(seconds):
     seconds: int seconds since midnight.
     """
     time = Time()
-    minutes, time.second = divmod(seconds, 60)
+    minutes, time.second = divmod(seconds, 60) #minutes is for computing purpose
     time.hour, time.minute = divmod(minutes, 60)
     return time
 
@@ -172,6 +199,8 @@ def substract_time(t1, t2):
 
     returns: Time
     """
+    seconds = time_to_int(t1)-time_to_int(t2)
+    return int_to_time(seconds)
 
 
 #######################
@@ -233,6 +262,10 @@ def add_time3(t1, t2):
 
 def mul_time(t1, factor):
     """Multiplies a Time object by a factor."""
+    if not valid_time(t1):
+        return f'not valid time'
+    a = time_to_int(t1)*factor
+    return int_to_time(a)
 
 
 def main():
@@ -280,5 +313,5 @@ def main():
 
 
 if __name__ == "__main__":
-    # main()
-    pass
+    main()
+    # pass
