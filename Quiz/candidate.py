@@ -15,6 +15,10 @@ class Candidate:
         """
         self.name = name
         self.winning_states = winning_states
+        if self.winning_states is not None:
+            for a,b in ELECTORAL_VOTES.items():
+                if a in self.winning_states:
+                    votes +=b
         self.votes = votes
 
     def __str__(self):
@@ -29,25 +33,25 @@ class Candidate:
         return f'{self.name} has won {new_str3}.'
 
 # Attempt 1: successfully calculated trump's votes, but not biden's
-    def __gt__(self, another):
-        """Overloads ">" operator """
-        for a,b in ELECTORAL_VOTES.items():
-            if a in self.winning_states:
-                self.votes +=b
-        print(self.votes)
-        # print(another.votes) why this is 0?
-        return self.votes > another.votes
+    # def __gt__(self, another):
+    #     """Overloads ">" operator """
+    #     for a,b in ELECTORAL_VOTES.items():
+    #         if a in self.winning_states:
+    #             self.votes +=b
+    #     print(self.votes)
+    #     # print(another.votes) why this is 0?
+    #     return self.votes > another.votes
 
-    def win_state(self, state):
-        """Add a state to winning_states and update votes.
-        state: a string of state abbreviation
-        """
-        self.votes=0
-        self.winning_states.append(state) # this line added votes together, so that's why I reset the self.votes before into 0
-        print(self.votes)
-        return self.winning_states and self.votes
+    # def win_state(self, state):
+    #     """Add a state to winning_states and update votes.
+    #     state: a string of state abbreviation
+    #     """
+    #     self.votes=0
+    #     self.winning_states.append(state) # this line added votes together, so that's why I reset the self.votes before into 0
+    #     print(self.votes)
+    #     return self.winning_states and self.votes
 
-# Attempt 2 succesfully calculated both's votes, but failed to return the values
+# Attempt 2 succesfully calculated both's votes, but failed to return the values. Changes: added self.votes in the __init__ section
     def __gt__(self, another):
         """Overloads ">" operator """
         # print(self.votes) # this line is 0 since the self.votes value has not been returned.
@@ -63,6 +67,13 @@ class Candidate:
                 self.votes +=b
         # print(self.votes)
         return self.winning_states, self.votes
+
+# # Attempt 3
+#     def win_state(self, state):
+#         self.winning_states.append(state)
+#         for a,b in ELECTORAL_VOTES.items():
+#             if a in self.winning_states:
+#                 self.votes +=b
 
 
 
