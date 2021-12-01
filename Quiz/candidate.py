@@ -1,3 +1,6 @@
+from typing import Annotated, NewType
+
+
 ELECTORAL_VOTES = {'AZ': 11, 'CA': 55, 'FL': 29, 'IA': 6, 'MA': 11, 'OH': 18, 'PA': 20, 'TX': 38}
 
 
@@ -18,27 +21,49 @@ class Candidate:
         """Return a string representation of this candidate,
         including name and winning state(s).
         """
-        new_str = ''
-        for i in self.winning_states():
-            new_str += f'\n\t{i}'
-        return f'{self.name} has won in {new_str}'
+        if self.winning_states == None:
+            return f'{self.name} has not won any state yet.'
+        new_str1 = str(self.winning_states).replace("'",'')
+        new_str2 = new_str1.replace('[','')
+        new_str3 = new_str2.replace(']','')
+        return f'{self.name} has won {new_str3}.'
 
-    def __gt__(self, another_Candidate):
+# Attempt 1: successfully calculated trump's votes, but not biden's
+    def __gt__(self, another):
         """Overloads ">" operator """
-        return self.votes > another_Candidate.votes
+        for a,b in ELECTORAL_VOTES.items():
+            if a in self.winning_states:
+                self.votes +=b
+        print(self.votes)
+        # print(another.votes) why this is 0?
+        return self.votes > another.votes
 
+    def win_state(self, state):
+        """Add a state to winning_states and update votes.
+        state: a string of state abbreviation
+        """
+        self.votes=0
+        self.winning_states.append(state) # this line added votes together, so that's why I reset the self.votes before into 0
+        print(self.votes)
+        return self.winning_states and self.votes
+
+# Attempt 2 succesfully calculated both's votes, but failed to return the values
+    def __gt__(self, another):
+        """Overloads ">" operator """
+        # print(self.votes) # this line is 0 since the self.votes value has not been returned.
+        return self.votes > another.votes
 
     def win_state(self, state):
         """Add a state to winning_states and update votes.
         state: a string of state abbreviation
         """
         self.winning_states.append(state)
-        return self.winning_states
-    
-    def votes(self):
-        for i in self.winning_states:
-            self.votes += ELECTORAL_VOTES[self.winning_states]
-        return self.votes
+        for a,b in ELECTORAL_VOTES.items():
+            if a in self.winning_states:
+                self.votes +=b
+        # print(self.votes)
+        return self.winning_states, self.votes
+
 
 
 ###########################################
