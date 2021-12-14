@@ -184,8 +184,10 @@ def is_anagram(word1, word2):
     #     i = i + 1
     #     j = j - 1
     #     return True
+    return sorted(word1)==sorted(word2)
 is_anagram([1, 2, 2], [2, 1, 2])
 is_anagram('stop', 'pots')
+is_anagram('bee','egg')
 
 
 
